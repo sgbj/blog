@@ -15,10 +15,8 @@ config = {
         url: 'https://sgbj.io',
         mail: {},
         database: {
-            client: 'sqlite3',
-            connection: {
-                filename: path.join(__dirname, '/content/data/ghost.db')
-            },
+            client: 'mysql',
+            connection: process.env.DATABASE_URL,
             debug: false
         },
 
@@ -27,6 +25,7 @@ config = {
             port: process.env.PORT
         }
     },
+
 
     // ### Development **(default)**
     development: {
@@ -57,8 +56,10 @@ config = {
         // #### Database
         // Ghost supports sqlite3 (default), MySQL & PostgreSQL
         database: {
-            client: 'mysql',
-            connection: process.env.DATABASE_URL,
+            client: 'sqlite3',
+            connection: {
+                filename: path.join(__dirname, '/content/data/ghost-dev.db')
+            },
             debug: false
         },
         // #### Server
