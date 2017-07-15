@@ -87,20 +87,6 @@
     </article>
 </main>
 
-
-<section id="discourse-comments" class="{{post_class}}" style="margin-top: 8rem;"></aside>
-
-<script type="text/javascript">
-  DiscourseEmbed = { discourseUrl: 'https://discourse.sgbj.io/',
-                     discourseEmbedUrl: '{{@blog.url}}{{url}}' };
-
-  (function() {
-    var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;
-    d.src = DiscourseEmbed.discourseUrl + 'javascripts/embed.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
-  })();
-</script>
-
 {{!-- Links to Previous/Next posts --}}
 <aside class="read-next">
     {{#next_post}}
@@ -120,5 +106,18 @@
     </a>
     {{/prev_post}}
 </aside>
+
+<section id="discourse-comments" class="{{post_class}}" style="margin-top: 8rem;"></section>
+
+<script type="text/javascript">
+  DiscourseEmbed = { discourseUrl: 'https://discourse.sgbj.io/',
+                     discourseEmbedUrl: '{{@blog.url}}{{url}}' };
+
+  (function() {
+    var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;
+    d.src = DiscourseEmbed.discourseUrl + 'javascripts/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
+  })();
+</script>
 
 {{/post}}
